@@ -25,15 +25,28 @@ These are the keybindings for qtile and dwm
 | MODKEY + period             | switch focus to next monitor                                             |
 | MODKEY + comma              | switch focus to prev monitor                                             |
 
-## Instalation DWM
+### Dependencies
++ `libxft-bgra`
++ `st`
++ `dmenu`
++ `ttf-mono`
++ `ttf-nerd-font`
++ `ttf-joypixels`
++ `alacritty`
 
+## Instalation DWM
 directly to the .config/dwm directory file and then compile
 ```bash
 sudo make clean install
 ```
 
-## Qtile
+## Instalation dwmblocks
+go to dwmblocks directory `.config//dwm/dwmblocks`
+```bash
+sudo make clean install
+```
 
+## Qtile
 if you want to use qtile, install qtile by typing command line
 
 ```bash
