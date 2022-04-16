@@ -25,6 +25,12 @@ These are the keybindings for qtile and dwm
 | MODKEY + period             | switch focus to next monitor                                             |
 | MODKEY + comma              | switch focus to prev monitor                                             |
 
+|                             |                   |
+|:--|:--
+| operating system            | Arch Linux        |
+| Display manager             | Ly manager        |
+| Terminal                    | ST and alacritty  |
+| WM                          | Qtile and DWM     |
 
 ## Instalation DWM
 directly to the .config/dwm directory file and then compile
@@ -58,9 +64,3 @@ sudo pacman -S qtile
 + `alacritty`
 + `dwmblocks`
 
-|                             |                   |
-|:--|:--
-| operating system            | Arch Linux        |
-| Display manager             | Ly manager        |
-| Terminal                    | ST and alacritty  |
-| WM                          | Qtile and DWM     |
