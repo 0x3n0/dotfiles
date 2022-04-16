@@ -4,7 +4,7 @@
 These are the keybindings for qtile and dwm
 
 | A FEW IMPORTANT KEYBINDINGS | ASSOCIATED ACTION                                                        |
-|-----------------------------+--------------------------------------------------------------------------|
+|:--|:--
 | MODKEY + RETURN             | opens terminal (alacritty is the terminal but can be easily changed)     |
 | MODKEY + SHIFT + RETURN     | opens run launcher (dmenu is the run launcher but can be easily changed) |
 | MODKEY + TAB                | rotates through the available layouts                                    |
