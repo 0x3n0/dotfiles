@@ -35,13 +35,13 @@ These are the keybindings for qtile and dwm
 | Terminal                    | ST and alacritty  |
 | WM                          | Qtile and DWM     |
 
-## Instalation DWM
+## Installation DWM
 directly to the .config/dwm directory file and then compile
 ```bash
 sudo make clean install
 ```
 
-## Instalation dwmblocks
+## Installation dwmblocks
 go to dwmblocks directory `.config//dwm/dwmblocks`
 ```bash
 sudo make clean install
