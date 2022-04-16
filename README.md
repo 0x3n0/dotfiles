@@ -31,3 +31,11 @@ go directly to the directory file `.config/dwm` then compile
 ```bash
 sudo make clean isntall
 ```
+
+## Qtile
+
+if you want to use cross qtile install qtile by typing the command line
+
+```bash
+sudo pacman -S qtile
+```
