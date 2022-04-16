@@ -25,14 +25,6 @@ These are the keybindings for qtile and dwm
 | MODKEY + period             | switch focus to next monitor                                             |
 | MODKEY + comma              | switch focus to prev monitor                                             |
 
-### Dependencies
-+ `libxft-bgra`
-+ `st`
-+ `dmenu`
-+ `ttf-mono`
-+ `ttf-nerd-font`
-+ `ttf-joypixels`
-+ `alacritty`
 
 ## Instalation DWM
 directly to the .config/dwm directory file and then compile
@@ -52,3 +44,21 @@ if you want to use qtile, install qtile by typing command line
 ```bash
 sudo pacman -S qtile
 ```
+### Package
++ `libxft-bgra`
++ `st`
++ `dmenu`
++ `rofi`
++ `feh`
++ `nitrogen`
++ `ranger`
++ `ttf-mono`
++ `ttf-nerd-font`
++ `ttf-joypixels`
++ `alacritty`
++ `dwmblocks`
+
+|:--|:--
+| operating system            | Arch Linux        |
+| Terminal                    | ST and alacritty  |
+| WM                          | Qtile and DWM     |
