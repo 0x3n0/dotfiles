@@ -34,7 +34,7 @@ sudo make clean install
 
 ## Qtile
 
-if you want to use cross qtile install qtile by typing the command line
+if you want to use qtile, install qtile by typing command line
 
 ```bash
 sudo pacman -S qtile
