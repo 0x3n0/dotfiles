@@ -27,7 +27,7 @@ These are the keybindings for qtile and dwm
 
 ## Instalation DWM
 
-go directly to the directory file `.config/dwm` then compile
+directly to the .config/dwm directory file and then compile
 ```bash
 sudo make clean install
 ```
