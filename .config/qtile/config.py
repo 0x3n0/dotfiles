@@ -10,8 +10,8 @@ from libqtile import layout, bar, widget, hook
 from libqtile.lazy import lazy
 from typing import List  # noqa: F401
 
-mod = "mod4"                                     # Sets mod key to SUPER/WINDOWS
-myTerm = "alacritty"                             # My terminal of choice
+mod = "mod4"                                     
+myTerm = "alacritty"                             
 
 keys = [
          ### The essentials
@@ -129,58 +129,9 @@ keys = [
          Key([mod, "shift"], "space",
              lazy.layout.toggle_split(),
              desc='Toggle between split and unsplit sides of stack'
-             ),
-
-         # Dmenu scripts launched using the key chord SUPER+p followed by 'key'
-         KeyChord([mod], "p", [
-             Key([], "e",
-                 lazy.spawn("./dmscripts/dm-confedit"),
-                 desc='Choose a config file to edit'
-                 ),
-             Key([], "i",
-                 lazy.spawn("./dmscripts/dm-maim"),
-                 desc='Take screenshots via dmenu'
-                 ),
-             Key([], "k",
-                 lazy.spawn("./dmscripts/dm-kill"),
-                 desc='Kill processes via dmenu'
-                 ),
-             Key([], "l",
-                 lazy.spawn("./dmscripts/dm-logout"),
-                 desc='A logout menu'
-                 ),
-             Key([], "m",
-                 lazy.spawn("./dmscripts/dm-man"),
-                 desc='Search manpages in dmenu'
-                 ),
-             Key([], "o",
-                 lazy.spawn("./dmscripts/dm-bookman"),
-                 desc='Search your qutebrowser bookmarks and quickmarks'
-                 ),
-             Key([], "r",
-                 lazy.spawn("./dmscripts/dm-reddit"),
-                 desc='Search reddit via dmenu'
-                 ),
-             Key([], "s",
-                 lazy.spawn("./dmscripts/dm-websearch"),
-                 desc='Search various search engines via dmenu'
-                 ),
-             Key([], "p",
-                 lazy.spawn("passmenu"),
-                 desc='Retrieve passwords with dmenu'
-                 )
+             )
          ])
 ]
-
-#group_names = [("", {'layout': 'monadtall'}),
-#               ("", {'layout': 'monadtall'}),
-#               ("", {'layout': 'monadtall'}),
-#               ("", {'layout': 'monadtall'}),
-#               ("", {'layout': 'monadtall'}),
-#               ("", {'layout': 'monadtall'}),
-#               ("", {'layout': 'monadtall'}),
-#               ("", {'layout': 'monadtall'}),
-#               ("", {'layout': 'floating'})]
                
 group_names = [("", {'layout': 'monadtall'}),
                ("", {'layout': 'monadtall'}),
@@ -195,8 +146,8 @@ group_names = [("", {'layout': 'monadtall'}),
 groups = [Group(name, **kwargs) for name, kwargs in group_names]
 
 for i, (name, kwargs) in enumerate(group_names, 1):
-    keys.append(Key([mod], str(i), lazy.group[name].toscreen()))        # Switch to another group
-    keys.append(Key([mod, "shift"], str(i), lazy.window.togroup(name))) # Send current window to another group
+    keys.append(Key([mod], str(i), lazy.group[name].toscreen()))        
+    keys.append(Key([mod, "shift"], str(i), lazy.window.togroup(name)))
 
 layout_theme = {"border_width": 1,
                 "margin": 10,
@@ -205,6 +156,8 @@ layout_theme = {"border_width": 1,
                 }
 
 layouts = [
+    layout.MonadTall(**layout_theme),
+    layout.Floating(**layout_theme)
     #layout.MonadWide(**layout_theme),
     #layout.Bsp(**layout_theme),
     #layout.Stack(stacks=2, **layout_theme),
@@ -214,7 +167,6 @@ layouts = [
     #layout.VerticalTile(**layout_theme),
     #layout.Matrix(**layout_theme),
     #layout.Zoomy(**layout_theme),
-    layout.MonadTall(**layout_theme),
     #layout.Max(**layout_theme),
     #layout.Stack(num_stacks=2),
     #layout.RatioTile(**layout_theme),
@@ -238,7 +190,6 @@ layouts = [
     #     vspace = 3,
     #     panel_width = 200
     #     ),
-    layout.Floating(**layout_theme)
 ]
 
 colors = [["#282c34", "#282c34"], # panel background
@@ -328,21 +279,6 @@ def init_widgets_list():
                        foreground = colors[0],
                        background = colors[0]
                        ),
-                       
-                       
-                       
-                       
-                       
-################ Menyimpan data ####################                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
-                       
                        
               widget.TextBox(
                        text = '',
@@ -467,10 +403,7 @@ def init_widgets_list():
                        foreground = colors[2],
                        background = colors[5],
                        padding = 5
-                       ),
-                       
-                       
-                       
+                       ),                                                  
                        
               #widget.TextBox(
               #         text = '',
@@ -490,10 +423,7 @@ def init_widgets_list():
                #        foreground = colors[2],
                #        background = colors[4],
                #        padding = 5
-               #        ),
-               
-               
-               
+               #        ),                                             
                
               widget.TextBox(
                        text = '',
@@ -504,21 +434,20 @@ def init_widgets_list():
                        ),
               widget.Clock(
                        foreground = colors[2],
-                       background = colors[5],
-                       format = "%A, %H:%M "
-                       #format = "%A, %B %d - %H:%M "
+                       background = colors[5],                      
+                       format = "%A, %B %d - %H:%M "
                        ),
               ]
     return widgets_list
 
 def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
-    del widgets_screen1[7:8]               # Slicing removes unwanted widgets (systray) on Monitors 1,3
+    del widgets_screen1[7:8]               
     return widgets_screen1
 
 def init_widgets_screen2():
     widgets_screen2 = init_widgets_list()
-    return widgets_screen2                 # Monitor 2 will display all widgets in widgets_list
+    return widgets_screen2                
 
 def init_screens():
     return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), opacity=1.0, size=20)),
@@ -574,14 +503,12 @@ bring_front_click = False
 cursor_warp = False
 
 floating_layout = layout.Floating(float_rules=[
-    # Run the utility of `xprop` to see the wm class and name of an X client.
-    # default_float_rules include: utility, notification, toolbar, splash, dialog,
-    # file_progress, confirm, download and error.
+         
     *layout.Floating.default_float_rules,
-    Match(title='Confirmation'),      # tastyworks exit box
-    Match(title='Qalculate!'),        # qalculate-gtk
-    Match(wm_class='kdenlive'),       # kdenlive
-    Match(wm_class='pinentry-gtk-2'), # GPG key password entry
+    Match(title='Confirmation'),      
+    Match(title='Qalculate!'),        
+    Match(wm_class='kdenlive'),       
+    Match(wm_class='pinentry-gtk-2'), 
 ])
 auto_fullscreen = True
 focus_on_window_activation = "smart"
@@ -591,12 +518,4 @@ def start_once():
     home = os.path.expanduser('~')
     subprocess.call([home + '/.config/qtile/autostart.sh'])
 
-# XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
-# string besides java UI toolkits; you can see several discussions on the
-# mailing lists, GitHub issues, and other WM documentation that suggest setting
-# this string if your java app doesn't work correctly. We may as well just lie
-# and say that we're a working one by default.
-#
-# We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
-# java that happens to be on java's whitelist.
 wmname = "0x3n0"
