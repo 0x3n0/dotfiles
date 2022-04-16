@@ -50,6 +50,16 @@ if you want to use qtile, install qtile by typing command line
 ```bash
 sudo pacman -S qtile
 ```
+then create a ```qtile.desktop``` file in the directory
+```bash
+[Desktop Entry]
+Name=0x3n0
+Comment=Qtile Session
+Exec=qtile start
+Type=Application
+Keywords=wm;tiling
+```
+
 ### Package
 + `libxft-bgra`
 + `st`
