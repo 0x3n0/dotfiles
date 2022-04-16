@@ -24,3 +24,10 @@ These are the keybindings for qtile and dwm
 | MODKEY + r                  | switch focus to monitor 3                                                |
 | MODKEY + period             | switch focus to next monitor                                             |
 | MODKEY + comma              | switch focus to prev monitor                                             |
+
+## Instalation DWM
+
+go directly to the directory file `.config/dwm` then compile
+```bash
+sudo make clean isntall
+```
