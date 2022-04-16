@@ -29,7 +29,7 @@ These are the keybindings for qtile and dwm
 
 go directly to the directory file `.config/dwm` then compile
 ```bash
-sudo make clean isntall
+sudo make clean install
 ```
 
 ## Qtile
