@@ -1,5 +1,6 @@
 ![](2022-04-16-184825_1366x768_scrot.png)
-* Keybindings
+
+## Keybindings
 These are the keybindings for qtile and dwm
 
 | A FEW IMPORTANT KEYBINDINGS | ASSOCIATED ACTION                                                        |
