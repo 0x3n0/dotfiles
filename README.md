@@ -74,4 +74,5 @@ Keywords=wm;tiling
 + `ttf-joypixels`
 + `alacritty`
 + `dwmblocks`
++ `starship`
 
