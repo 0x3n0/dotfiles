@@ -50,7 +50,7 @@ if you want to use qtile, install qtile by typing command line
 ```bash
 sudo pacman -S qtile
 ```
-then create a ```qtile.desktop``` file in the directory `/usr/share/xssesions` it applies if you use ly manager if you don't use ly manager please find out for yourself
+then create a ```qtile.desktop``` file in the directory `/usr/share/xssesions` it applies if you use ly manager if you don't use `ly display manager` please find out for yourself
 
 ```bash
 [Desktop Entry]
