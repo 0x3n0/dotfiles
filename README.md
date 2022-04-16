@@ -58,6 +58,7 @@ sudo pacman -S qtile
 + `alacritty`
 + `dwmblocks`
 
+|                             |                   |
 |:--|:--
 | operating system            | Arch Linux        |
 | Terminal                    | ST and alacritty  |
