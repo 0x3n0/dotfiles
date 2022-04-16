@@ -61,5 +61,6 @@ sudo pacman -S qtile
 |                             |                   |
 |:--|:--
 | operating system            | Arch Linux        |
+| Display manager             | Ly manager        |
 | Terminal                    | ST and alacritty  |
 | WM                          | Qtile and DWM     |
