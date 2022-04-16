@@ -1,0 +1,4 @@
+#! /bin/bash 
+
+kern="$(uname -o)"
+echo -e "$kern "

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+wifi=$(nmcli -f ACTIVE,SIGNAL dev wifi list | awk '$1=="yes" {print $2}')
+echo "${wifi}% "

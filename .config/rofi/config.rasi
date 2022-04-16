@@ -1,0 +1,4 @@
+configuration {
+	theme: "~/.config/rofi/themes/rasi";
+}
+@import "/usr/share/rofi/themes/arthur.rasi"
