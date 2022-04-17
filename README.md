@@ -2,6 +2,8 @@
 ![](2022-04-16-184825_1366x768_scrot.png)
 ## Qtile
 ![](2022-04-16_22-19.png)
+## ly display manager
+![](ly.png)
 
 ## Keybindings
 These are the keybindings for qtile and dwm
