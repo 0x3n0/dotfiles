@@ -1,4 +1,4 @@
 #! /bin/bash 
 
-dte="$(date +"%a, %B %d %l:%M%p"| sed 's/  / /g')"
+dte="$(date +"%d %B %l:%M %p"| sed 's/  / /g')"
 echo -e "$dte    0x3n0 "
