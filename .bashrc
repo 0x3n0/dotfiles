@@ -8,7 +8,9 @@ export ALTERNATE_EDITOR=""                        # setting for emacsclient
 
 ### PROMPT
 #This is commented out if using starship prompt
-PS1='[\u@\h \W]\$ '
+#PS1='\[\033[01;31m\]\u\[\033[1;37m\]@\[\033[01;31m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
+PS1='\[\033[00m\][\[\033[01;31m\]\u\[\033[00m\]💀\[\033[01;31m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]]\[\033[00m\]\$ '
 
 ### PATH
 if [ -d "$HOME/.bin" ] ;
@@ -95,6 +97,8 @@ up () {
 # broot
 alias br='broot -dhp'
 alias bs='broot --sizes'
+alias vi='nvim'
+alias rg='ranger'
 
 # Changing "ls" to "exa"
 alias ls='exa -al --color=always --group-directories-first' # my preferred listing
@@ -104,11 +108,13 @@ alias lt='exa -aT --color=always --group-directories-first' # tree listing
 alias l.='exa -a | egrep "^\."'
 
 # pacman and yay
-alias pacsyu='sudo pacman -Syyu'                 # update only standard pkgs
+alias pacs='sudo pacman -S'                 	# install pkgs
+alias pacsy='sudo pacman -Syy'                 # update only standard pkgs
+alias pacsu='sudo pacman -Syyu'                 # update only standard pkgs
+alias yays='yay -S'             		# install AUR pkgs (yay)
+alias yaysy='yay -Syy --noconfirm'              # update standard pkgs
 alias yaysua='yay -Sua --noconfirm'              # update only AUR pkgs (yay)
 alias yaysyu='yay -Syu --noconfirm'              # update standard pkgs and AUR pkgs (yay)
-alias parsua='paru -Sua --noconfirm'             # update only AUR pkgs (paru)
-alias parsyu='paru -Syu --noconfirm'             # update standard pkgs and AUR pkgs (paru)
 alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)'  # remove orphaned packages
 
@@ -202,19 +208,17 @@ alias tips='lbrynet txo spend --type=support --is_not_my_input --blocking'
 # Thinkorswim
 alias tos="~/thinkorswim/thinkorswim"
 
-### SOURCING BROOT ###
-source ~/.config/broot/launcher/bash/br
-
 ### BASH INSULTER ###
 if [ -f /etc/bash.command-not-found ]; then
     . /etc/bash.command-not-found
 fi
 
 ### SETTING THE STARSHIP PROMPT ###
-eval "$(starship init bash)"
-
-source /home/sec/.config/broot/launcher/bash/br
+#eval "$(starship init bash)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-colorscript random
-source $GOPATH//home/sec/go/src/github.com/tomnomnom/gf/gf-completion.bash
+# colorscript random
+# unalias gf
+# unalias gau
+
+# source $GOPATH/home/0x/Tools/gf/gf-completion.bash
