@@ -22,7 +22,7 @@ killrecording() {
 	updateicon ""
 	pkill -RTMIN+9 "${STATUSBAR:-dwmblocks}"
 	# even after SIGTERM, ffmpeg may still run, so SIGKILL it.
-	sleep 3
+	sleep 1
 	kill -9 "$recpid"
 	exit
 	}
@@ -45,11 +45,24 @@ video() { ffmpeg \
 	-f x11grab \
 	-s "$(xdpyinfo | awk '/dimensions/ {print $2;}')" \
 	-i "$DISPLAY" \
- 	-c:v libx264 -crf 34 -qp 0 -r 30 \
-	"$HOME/Vidio/vidio-$(date '+%y%m%d-%H%M-%S').mkv" &
+ 	-c:v libx264 -crf 28 -qp 0 -r 30 \
+	-preset veryfast -threads 0 \
+	-filter_complex "anullsrc=r=48000:cl=stereo" \
+	"$HOME/Vidio/vidio-$(date '+%y%m%d-%H%M-%S').mp4" &
 	echo $! > /tmp/recordingpid
-	updateicon "🔴𝗿𝗲𝗰 "
+	updateicon "🔴 𝗿𝗲𝗰 "
 	}
+
+TeleRec() { ffmpeg \
+    -f x11grab \
+    -r 30 -i :0.0+0,0 -filter_complex "anullsrc=r=48000:cl=stereo" \
+    -c:v libx264 -crf 25 -pix_fmt yuv420p \
+    -preset veryfast -threads 0 \
+    "$HOME/Vidio/record-$(date '+%y%m%d-%H%M-%S').mp4" &
+    echo $! > /tmp/recordingpid
+    updateicon "🔴 𝗿𝗲𝗰 "
+    }
+
 
 webcamhidef() { ffmpeg \
 	-f v4l2 \
@@ -80,11 +93,12 @@ audio() { \
 	}
 
 askrecording() { \
-	choice=$(printf "screencast\\nvideo\\nvideo selected\\naudio\\nwebcam\\nwebcam (hi-def)" | dmenu -i -p "Select recording style:")
+	choice=$(printf "screencast\\nvideo\\nTeleRec\\nvideo selected\\naudio\\nwebcam\\nwebcam (hi-def)" | dmenu -i -p "Select recording style:")
 	case "$choice" in
 		screencast) screencast;;
 		audio) audio;;
 		video) video;;
+        TeleRec) TeleRec;;
 		*selected) videoselected;;
 		webcam) webcam;;
 		"webcam (hi-def)") webcamhidef;;
@@ -116,6 +130,7 @@ videoselected()
 case "$1" in
 	screencast) screencast;;
 	audio) audio;;
+    TeleRec) TeleRec;;
 	video) video;;
 	*selected) videoselected;;
 	kill) killrecording;;
