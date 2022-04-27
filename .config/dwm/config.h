@@ -15,7 +15,7 @@ static const char *fonts[]     = {"fontawesome:size=10", "SauceCodePro Mono:weig
 static const char col_1[]  = "#44475a"; /* background color of bar */
 static const char col_2[]  = "#44475a"; /* border color unfocused windows */
 static const char col_3[]  = "#f8f8f2";
-static const char col_4[]  = "#6272a4"; /* border color focused windows and tags */
+static const char col_4[]  = "#be4949"; /* border color focused windows and tags */
 /* bar opacity 
  * 0xff is no transparency.
  * 0xee adds wee bit of transparency.
@@ -27,7 +27,7 @@ static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]        = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_3, col_1, col_2 },
-	[SchemeSel]  = { col_3, col_4, col_4 },
+	[SchemeSel]  = { col_3, col_2, col_4 },
 };
 static const unsigned int alphas[][3] = {
 	/*               fg      bg        border     */
