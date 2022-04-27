@@ -30,12 +30,15 @@ These are the keybindings for qtile and dwm
 | MODKEY + period             | switch focus to next monitor                                             |
 | MODKEY + comma              | switch focus to prev monitor                                             |
 
+### Open apps
+
 | Keybinding       | Action                                                                       |
 |:--|:--
 | MODKEY + ALT + b | open Chromium browser                                                        |
 | MODKEY + ALT + s | tabbed -r 2 surf -pe x '.surf/html/homepage.html'                            |
 | MODKEY + ALT + t | open telegeam                                                                |
 | MODKEY + ALT + f | open [pcmanfm (PaCMANFileManager)](https://wiki.archlinux.org/title/PCManFM) |
+
 
 
 | Details                     |                   |
