@@ -30,6 +30,14 @@ These are the keybindings for qtile and dwm
 | MODKEY + period             | switch focus to next monitor                                             |
 | MODKEY + comma              | switch focus to prev monitor                                             |
 
+| Keybinding       | Action                                                                       |
+|:--|:--
+| MODKEY + ALT + b | open Brave browser                                                           |
+| MODKEY + ALT + s | tabbed -r 2 surf -pe x '.surf/html/homepage.html'                            |
+| MODKEY + ALT + m | open [mailspring](https://github.com/Foundry376/Mailspring)                  |
+| MODKEY + ALT + f | open [pcmanfm (PaCMANFileManager)](https://wiki.archlinux.org/title/PCManFM) |
+
+
 |                             |                   |
 |:--|:--
 | operating system            | Arch Linux        |
