@@ -131,8 +131,8 @@ static Key keys[] = {
 	
     /* Keybindings for programs using the format SUPER + ALT + "key" */
 	{ MODKEY|Mod1Mask,      -1,        XK_s,      spawn,          CMD("tabbed -r 2 surf -pe x '.surf/html/homepage.html'") },
-	{ MODKEY|Mod1Mask,      -1,        XK_b,      spawn,          CMD("brave") },
-	{ MODKEY|Mod1Mask,      -1,        XK_m,      spawn,          CMD("mailspring") },
+	{ MODKEY|Mod1Mask,      -1,        XK_b,      spawn,          CMD("chromium") },
+	{ MODKEY|Mod1Mask,      -1,        XK_t,      spawn,          CMD("telegram") },
 	{ MODKEY|Mod1Mask,      -1,        XK_f,      spawn,          CMD("pcmanfm") },
 
 	TAGKEYS(                -1,        XK_1,                      0)
