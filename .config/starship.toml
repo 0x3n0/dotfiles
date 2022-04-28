@@ -1,20 +1,24 @@
-# Don't print a new line at the start of the prompt
+### Don't print a new line at the start of the prompt
 add_newline = false
 
-# Make prompt a single line instead of two lines
-[line_break]
-disabled = true
+### Make prompt a single line instead of two lines
+# [line_break]
+# disabled = true
 
-# Replace the "❯" symbol in the prompt with "➜"
+### Replace the "❯" symbol in the prompt with "➜"
 # [character]                         # The name of the module we are configuring is "character"
 # success_symbol = "[➜](bold green)"  # The "success_symbol" is set to "➜" with color "bold green"
 
-# Use custom format
-# format = """
-# [┌───────────────────>](bold green)
-# [│](bold green)$directory$rust$package
-# [└─>](bold green) """
+### Use custom format
+#format = """
+#[┌───────────────────>](bold red)
+#[│](bold green)$directory$rust$package
+#[└>](bold red) """
+format = """
+ $directory[❯](bold red) """
 
-# Disable the package module, hiding it from the prompt completely
-[package]
-disabled = true
+
+### Disable the package module, hiding it from the prompt completely
+# [package]
+# disabled = true
+
