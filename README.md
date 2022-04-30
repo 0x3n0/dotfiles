@@ -80,8 +80,13 @@ Keywords=wm;tiling
 ### touchpad.conf
 Swapping two- and three-finger tap for a touchpad is a straight forward example. Instead of the default three-finger tap for pasting you can configure two-finger tap pasting by setting the `TappingButtonMap` option in your Xorg configuration file. To set 1/2/3-finger taps to left/right/middle set `TappingButtonMap` to `lrm`, for left/middle/right set it to `lmr`.
 
-```bash
+create a file name `30-touchpad.conf` under the directory `xorg.conf.d`
+
 `/etc/X11/xorg.conf.d/30-touchpad.conf`
+
+copy and paste this configuration then save
+
+```bash
 Section "InputClass"
     Identifier "touchpad"
     Driver "libinput"
