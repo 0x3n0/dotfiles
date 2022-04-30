@@ -82,7 +82,9 @@ Swapping two- and three-finger tap for a touchpad is a straight forward example.
 
 create a file name `30-touchpad.conf` under the directory `xorg.conf.d`
 
-`/etc/X11/xorg.conf.d/30-touchpad.conf`
+```plaintext
+/etc/X11/xorg.conf.d/30-touchpad.conf
+```
 
 copy and paste this configuration then save
 
