@@ -98,6 +98,19 @@ Section "InputClass"
 EndSection
 ```
 
+or you can use this and name it `90-touchpad.conf`
+
+```plaintext
+Section "InputClass"
+    Identifier "touchpad"
+    Driver "libinput"
+    MatchIsTouchpad "on"
+    Option "Tapping" "on"
+    Option "AccelSpeed" "0.40"
+    Option "AccelProfile" "flat"
+EndSection
+```
+
 ### Package
 + `libxft-bgra`
 + `st`
