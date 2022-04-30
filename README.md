@@ -100,7 +100,7 @@ EndSection
 
 or you can use this and name it `90-touchpad.conf`
 
-```plaintext
+```bash
 Section "InputClass"
     Identifier "touchpad"
     Driver "libinput"
