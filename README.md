@@ -36,7 +36,7 @@ These are the keybindings for qtile and dwm
 |:--|:--
 | MODKEY + ALT + b | open Chromium browser                                                        |
 | MODKEY + ALT + s | tabbed -r 2 surf -pe x '.surf/html/homepage.html'                            |
-| MODKEY + ALT + t | open telegeam                                                                |
+| MODKEY + ALT + b | open telegeam                                                                |
 | MODKEY + ALT + f | open [pcmanfm (PaCMANFileManager)](https://wiki.archlinux.org/title/PCManFM) |
 | MODKEY + ALT + i | open instagram.com |
 | MODKEY + ALT + l | open linkedin.com |
