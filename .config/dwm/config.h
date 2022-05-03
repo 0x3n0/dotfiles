@@ -100,11 +100,13 @@ static const char *termcmd[]     = { "st", NULL };
 /* An alternative way to launch st along with the fish shell */
 /* static const char *termcmd[]     = { "st", "-e fish", NULL }; */
 static const char *tabtermcmd[]  = { "tabbed", "-r", "2", "st", "-w", "''", NULL };
+static const char *roficmd[] = { "rofi", "-show", "drun", "-show-icons", "-config", "~/.config/rofi/themes/rasi.blue", NULL };
 
 static Key keys[] = {
 	/* modifier             chain key  key        function        argument */
 	{ MODKEY|ShiftMask,     -1,        XK_Return, spawn,          {.v = dmenucmd } },
 	{ MODKEY,               -1,        XK_Return, spawn,          {.v = termcmd } },
+        { Mod1Mask,             -1,        XK_p,      spawn,          {.v = roficmd } },
 	{ Mod1Mask,             -1,        XK_Return, spawn,          {.v = tabtermcmd } },
 	{ MODKEY,               -1,        XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,     -1,        XK_j,      rotatestack,    {.i = +1 } },
