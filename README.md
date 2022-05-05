@@ -72,6 +72,8 @@ sudo make clean install
 ```
 
 ## Installation dwmblocks
+![](dwmblocks.png)
+
 go to dwmblocks directory `.config//dwm/dwmblocks`
 ```bash
 sudo make clean install
