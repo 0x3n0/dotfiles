@@ -80,7 +80,7 @@ sudo make clean install
 
 Download config file with:
 ```bash
-curl -fLo ~/.vimrc --create-dirs https://github.com/0x3n0/dotfiles/-/raw/master/.vimrc
+curl -fLo ~/.vimrc --create-dirs https://github.com/0x3n0/dotfiles/blob/main/.vimrc
 ```
 
 Install `vim-plug` (for plugin management) with:
