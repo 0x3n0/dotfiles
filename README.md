@@ -78,6 +78,8 @@ sudo make clean install
 ```
 ### Installataion Vim
 
+![](vim.png)
+
 Download config file with:
 ```bash
 curl -fLo ~/.vimrc --create-dirs https://raw.githubusercontent.com/0x3n0/dotfiles/main/.vimrc
