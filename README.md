@@ -44,7 +44,7 @@ These are the keybindings for qtile and dwm
 | MODKEY + ALT + l | open linkedin.com |
 | MODKEY + ALT + t | open twitter.com |
 
-#### Keybindings for programs using the format `SUPER` + `ALT` + `key`
+#### Keybinding to open apps using `SUPER` + `ALT` + `key`
 ```plaintext
 { MODKEY|Mod1Mask,      -1,        XK_g,      spawn,          CMD("surf google.com") },
 { MODKEY|Mod1Mask,      -1,        XK_m,      spawn,          CMD("tabbed -r 2 surf  duckduckgo.com/?q=") },
