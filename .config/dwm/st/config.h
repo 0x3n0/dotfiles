@@ -1,16 +1,3 @@
-/*  ____ _____  */
-/* |  _ \_   _|  Derek Taylor (DistroTube) */
-/* | | | || |  	 http://www.youtube.com/c/DistroTube */
-/* | |_| || |  	 http://www.gitlab.com/dwt1/ */
-/* |____/ |_|  	 */ 
-
-/* See LICENSE file for copyright and license details. */
-/* appearance */
-
-/* Your default font will be Hack which is found in the standard
- * Arch repos and is listed as a dependency for this build. JoyPixels is also
- * a hard dependency and makes colored fonts and emojis possible.
- */
 static char *font = "Hack:pixelsize=14:antialias=true:autohint=true";
 static char *font2[] = { 
     "JoyPixels:pixelsize=14:antialias=true:autohint=true",
