@@ -58,8 +58,6 @@ These are the keybindings for qtile and dwm
 ```
 
 
-
-
 | Details                     |                   |
 |:--|:--
 | operating system            | Arch Linux        |
@@ -77,6 +75,27 @@ sudo make clean install
 go to dwmblocks directory `.config//dwm/dwmblocks`
 ```bash
 sudo make clean install
+```
+### Installataion Vim
+
+Download config file with:
+```bash
+curl -fLo ~/.vimrc --create-dirs https://github.com/0x3n0/dotfiles/-/raw/master/.vimrc
+```
+
+Install `vim-plug` (for plugin management) with:
+
+```bash
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://gist.githubusercontent.com/0x3n0/c19a090df08c999a516a4e950f50d12d/raw/24c69c17f2baff032af9d8efc0f0eb999f28f376/plug.vim
+```
+Run Vim and install plugins with `:PlugInstall`. Exit and restart for changes to take effect.
+
+and reuse the Vim config files by adding these lines to `~/.config/vim/init.vim`, as described in Transitioning from Vim:
+
+```bash
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath=&runtimepath
+source ~/.vimrc
 ```
 
 ## Qtile
