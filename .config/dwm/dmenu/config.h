@@ -97,7 +97,7 @@ static unsigned int lines      = 0;
  * 8. solarized-light.h
  * 9. tomorrow-night.h
  */
-#include "colors/nord.h"
+#include "colors/white.h"
 
 #if GRID_PATCH
 /* -g option; if nonzero, dmenu uses a grid comprised of columns and lines */
