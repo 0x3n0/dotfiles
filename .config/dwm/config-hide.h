@@ -42,18 +42,21 @@ static const unsigned int alphas[][3] = {
 
 
 /* tagging */
-static const char *tags[] = { " Home", " Terminal", " Bugs ", " Burpsuite", " Github", " HackTheBox", " Computer", " Files", " Setting" };
+ static const char *tags[] = { " Home", " Chrome", " Burpsuite", " Telegram", " Alacritty", " LinkedIn", " Twitter", " Github", " Bugs " };
 
-static const Rule rules[] = {
-	/* xprop(1):
-	 *	WM_CLASS(STRING) = instance, class
-	 *	WM_NAME(STRING) = title
-	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "Burpsuite",  NULL,     NULL,       1 << 3,       0,           -1 },
-
+ static const Rule rules[] = {
+     /* xprop(1):
+      *  WM_CLASS(STRING) = instance, class
+      *  WM_NAME(STRING) = title
+      */
+     /* class               instance    title       tags mask     isfloating   monitor */
+     { "Home",              NULL,       NULL,       0,            0,           -1 }, // tag 1
+     { "Chromium",          NULL,       NULL,       1 << 1,       0,           -1 }, // tag 2
+     { "burp-StartBurp",    NULL,       NULL,       1 << 2,       0,           -1 }, // tag 3
+     { "TelegramDesktop",   NULL,       NULL,       1 << 3,       0,           -1 }, // tag 4
+     { "Alacritty",         NULL,       NULL,       1 << 4,       0,           -1 }, // tag 5
+     { "Min",               NULL,       NULL,       1 << 5,       0,           -1 }, // tag 6
+     { "qutebrowser",       NULL,       NULL,       1 << 6,       0,           -1 }, // tag 7
 };
 
 /* layout(s) */
@@ -78,6 +81,7 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask,           CHAIN,    KEY,      toggleview,     {.ui = 1 << TAG} }, \
 	{ MODKEY|ShiftMask,             CHAIN,    KEY,      tag,            {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask|ShiftMask, CHAIN,    KEY,      toggletag,      {.ui = 1 << TAG} },
+
 #define CMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
@@ -94,8 +98,7 @@ static const char *dmenucmd[]    = { "dmenu_run", "-l", "15", "-c", "-bw", "2", 
 static const char *termcmd[]     = { "st", NULL };
 /* An alternative way to launch st along with the fish shell */
 /* static const char *termcmd[]     = { "st", "-e fish", NULL }; */
-/* static const char *tabtermcmd[]  = { "tabbed", "-r", "2", "st", "-w", "''", NULL }; */
-static const char *tabtermcmd[]  = { "alacritty", "-e", "tmux", NULL };
+static const char *tabtermcmd[]  = { "tabbed", "-r", "2", "st", "-w", "''", NULL };
 
 static Key keys[] = {
 	/* modifier             chain key  key        function        argument */
@@ -111,24 +114,22 @@ static Key keys[] = {
 	{ MODKEY,               -1,        XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,               -1,        XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,               -1,        XK_l,      setmfact,       {.f = +0.05} },
-	
-	{ MODKEY|Mod4Mask,       -1,      	XK_h,      incrgaps,       {.i = +1 } },
-        { MODKEY|Mod4Mask,       -1,       	XK_l,      incrgaps,       {.i = -1 } },
-        { MODKEY|Mod4Mask|ShiftMask, -1,	XK_h,      incrogaps,      {.i = +1 } },
-        { MODKEY|Mod4Mask|ShiftMask,    -1,	XK_l,      incrogaps,      {.i = -1 } },
-        { MODKEY|Mod4Mask|ControlMask,  -1,	XK_h,      incrigaps,      {.i = +1 } },
-        { MODKEY|Mod4Mask|ControlMask,  -1,	XK_l,      incrigaps,      {.i = -1 } },
-        { MODKEY|Mod4Mask,              -1,	XK_0,      togglegaps,     {0} },
-        { MODKEY|Mod4Mask|ShiftMask,    -1,	XK_0,      defaultgaps,    {0} },
-        { MODKEY,                       -1,	XK_y,      incrihgaps,     {.i = +1 } },
-        { MODKEY,                       -1,	XK_o,      incrihgaps,     {.i = -1 } },
-        { MODKEY|ControlMask,           -1,	XK_y,      incrivgaps,     {.i = +1 } },
-        { MODKEY|ControlMask,           -1,	XK_o,      incrivgaps,     {.i = -1 } },
-        { MODKEY|Mod4Mask,              -1,	XK_y,      incrohgaps,     {.i = +1 } },
-        { MODKEY|Mod4Mask,              -1,	XK_o,      incrohgaps,     {.i = -1 } },
-        { MODKEY|ShiftMask,             -1,	XK_y,      incrovgaps,     {.i = +1 } },
-        { MODKEY|ShiftMask,             -1,	XK_o,      incrovgaps,     {.i = -1 } },
-
+	{ MODKEY|Mod4Mask,      -1,      	XK_h,      incrgaps,       {.i = +1 } },
+  { MODKEY|Mod4Mask,      -1,       	XK_l,      incrgaps,       {.i = -1 } },
+  { MODKEY|Mod4Mask|ShiftMask, -1,	XK_h,      incrogaps,      {.i = +1 } },
+  { MODKEY|Mod4Mask|ShiftMask,    -1,	XK_l,      incrogaps,      {.i = -1 } },
+  { MODKEY|Mod4Mask|ControlMask,  -1,	XK_h,      incrigaps,      {.i = +1 } },
+  { MODKEY|Mod4Mask|ControlMask,  -1,	XK_l,      incrigaps,      {.i = -1 } },
+  { MODKEY|Mod4Mask,              -1,	XK_0,      togglegaps,     {0} },
+  { MODKEY|Mod4Mask|ShiftMask,    -1,	XK_0,      defaultgaps,    {0} },
+  { MODKEY,                       -1,	XK_y,      incrihgaps,     {.i = +1 } },
+  { MODKEY,                       -1,	XK_o,      incrihgaps,     {.i = -1 } },
+  { MODKEY|ControlMask,           -1,	XK_y,      incrivgaps,     {.i = +1 } },
+  { MODKEY|ControlMask,           -1,	XK_o,      incrivgaps,     {.i = -1 } },
+  { MODKEY|Mod4Mask,              -1,	XK_y,      incrohgaps,     {.i = +1 } },
+  { MODKEY|Mod4Mask,              -1,	XK_o,      incrohgaps,     {.i = -1 } },
+  { MODKEY|ShiftMask,             -1,	XK_y,      incrovgaps,     {.i = +1 } },
+  { MODKEY|ShiftMask,             -1,	XK_o,      incrovgaps,     {.i = -1 } },
 	{ MODKEY|ControlMask,   -1,        XK_Return, zoom,           {0} },
 	{ MODKEY,               -1,        XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,     -1,        XK_c,      killclient,     {0} },
