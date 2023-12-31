@@ -144,12 +144,13 @@ or you can use this and name it `90-touchpad.conf`
 
 ```bash
 Section "InputClass"
-    Identifier "touchpad"
+    Identifier "Touchpad"
     Driver "libinput"
     MatchIsTouchpad "on"
     Option "Tapping" "on"
-    Option "AccelSpeed" "0.40"
-    Option "AccelProfile" "flat"
+    Option "TappingButtonMap" "lrm"
+    Option "NaturalScrolling" "true"
+    Option "AccelSpeed" "0.5"  # Sesuaikan sensitivitas sesuai keinginan Anda
 EndSection
 ```
 
