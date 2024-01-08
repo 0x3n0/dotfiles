@@ -150,8 +150,10 @@ Section "InputClass"
     Option "Tapping" "on"
     Option "TappingButtonMap" "lrm"
     Option "NaturalScrolling" "true"
-    Option "AccelSpeed" "0.5"  # Sesuaikan sensitivitas sesuai keinginan Anda
+    Option "AccelSpeed" "0.45"
+    Option "CursorSize" "12"
 EndSection
+
 ```
 
 ### Package
